@@ -1,0 +1,76 @@
+- id: '1630921696509'
+  name: Rollos Auf
+  entities:
+    cover.0:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Hauptbad
+      supported_features: 15
+      state: open
+    cover.1:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Schlafzimmer
+      supported_features: 15
+      state: open
+    cover.2:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Wohnzimmer_2
+      supported_features: 15
+      state: open
+    cover.3:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Gästebad
+      supported_features: 15
+      state: open
+    cover.4:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Wohnzimmer_1
+      supported_features: 15
+      state: open
+    cover.5:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Kind_2
+      supported_features: 15
+      state: open
+    cover.6:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Küchentür
+      supported_features: 15
+      state: open
+    cover.7:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Hebeschiebetür
+      supported_features: 15
+      state: open
+    cover.8:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Kind_1
+      supported_features: 15
+      state: open
+    cover.9:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Küchenfenster
+      supported_features: 15
+      state: open
+  icon: mdi:window-shutter-open
+  metadata: {}
+- id: '1756990150225'
+  name: Alarm aus
+  entities:
+    switch.node_19:
+      friendly_name: 'SireneFlur '
+      state: 'off'
+    switch.high_volume_siren_95_db_and_led_strobe_light_2:
+      friendly_name: 'SireneOffice '
+      state: 'off'
+  icon: mdi:alarm-light-off-outline
+  metadata: {}
