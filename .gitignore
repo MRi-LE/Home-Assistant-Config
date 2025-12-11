@@ -48,9 +48,9 @@
 
 
 # Blueprints
-#!blueprints/
-!blueprints/**/*.yaml
-!blueprints/**/*.yml
+blueprints/
+blueprints/**/*.yaml
+blueprints/**/*.yml
 
 
 
@@ -110,7 +110,7 @@ www/community/advanced-camera-card/*
 
 # Addon configurations - Allow essential config files only
 addon_configs/**/*
-!addon_configs/*/
+addon_configs/*/
 
 # Exclude all runtime data and cache directories
 .storage/
