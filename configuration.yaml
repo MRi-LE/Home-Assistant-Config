@@ -79,8 +79,8 @@ homeassistant:
   customize: !include customize.yaml
 
 ##velux:
-  #host: 192.168.178.22
-  #password: bhrHT2PXNA
+  #host: !secret velux_host
+  #password: !secret velux_pass
 
 
 #device_tracker:

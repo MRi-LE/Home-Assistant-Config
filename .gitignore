@@ -44,52 +44,14 @@
 !customize_domain.yaml
 !customize_glob.yaml
 
-# Packages directory
-!packages/
-!packages/**/*.yaml
-!packages/**/*.yml
+
 
 # Blueprints
 !blueprints/
 !blueprints/**/*.yaml
 !blueprints/**/*.yml
 
-# Packages
-!packages/
-!packages/**/*.yaml
-!packages/**/*.yml
 
-# AppDaemon
-!appdaemon/
-!appdaemon/appdaemon.yaml
-!appdaemon/apps/
-!appdaemon/apps/**/*.py
-!appdaemon/apps/**/*.yaml
-!appdaemon/apps/**/*.yml
-
-!appdaemon/dashboards/
-!appdaemon/dashboards/**/*.dash
-# Exclude AppDaemon runtime files
-appdaemon/compiled/
-appdaemon/namespaces/
-appdaemon/www/
-
-# Node-RED (if used)
-!node-red/
-!node-red/**/*.json
-!node-red/**/*.js
-node-red/**/node_modules/
-
-# Zigbee2MQTT
-!zigbee2mqtt/
-!zigbee2mqtt/**/*.yaml
-!zigbee2mqtt/**/*.yml
-!zigbee2mqtt/**/*.json
-
-# ESPresense
-!espresense/
-!espresense/**/*.yaml
-!espresense/**/*.yml
 
 # MQTT discovery or other integrations
 !mqtt/
@@ -116,18 +78,18 @@ node-red/**/node_modules/
 !shell_commands/**/*
 
 # WWW directory (static files for Lovelace/frontend)
-!www/
-!www/**/*.js
-!www/**/*.css
-!www/**/*.html
-!www/**/*.json
-!www/**/*.yaml
-!www/**/*.yml
+#!www/
+#!www/**/*.js
+#!www/**/*.css
+#!www/**/*.html
+#!www/**/*.json
+#!www/**/*.yaml
+#!www/**/*.yml
 
 # Allow additional file types for custom cards/resources
-!www/**/*.ts
-!www/**/*.map
-!www/**/*.LICENSE.txt
+#!www/**/*.ts
+#!www/**/*.map
+#!www/**/*.LICENSE.txt
 # Exclude certain auto-generated or large files in www
 www/**/*.gz
 

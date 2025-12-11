@@ -1,6 +1,6 @@
 #  - platform: google_keep
-#    username: michael.richter.le@gmail.com
-#    password: xiccyalautuwvmou
+#    username: !secrets google_keep_user
+#    password: !secrets google_keep_pass
 #    labels:
 #      - 'Home Assistant'
 #    pinned: true
