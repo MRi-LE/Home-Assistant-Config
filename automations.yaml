@@ -138,7 +138,7 @@
           message: '{% for entity in trigger.to_state.attributes.entity_id %}       {%
             if states(entity) == ''on'' %} {{ state_attr(entity,''friendly_name'')
             }} meldet Rauchalarm! {% endif %} {% endfor %}'
-          target: 491722108897
+          target: !secret my_mobil
         action: notify.whatsapp
     - conditions:
       - condition: trigger
