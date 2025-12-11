@@ -44,7 +44,7 @@ I’ve written a series of blog posts on my website that dive into particular pa
 
 
 <!-- Shields -->
-[homeassistantci-shield]: https://github.com/MRi-LE/Home-AssistantConfig/actions/workflows/check-config.yml/badge.svg
+[homeassistantci-shield]: https://github.com/MRi-LE/Home-Assistant-Config/actions/workflows/check-config.yml/badge.svg
 [homeassistantci]: https://github.com/MRi-LE/Home-AssistantConfig/actions/workflows/check-config.yml
 [last-commit-shield]: https://img.shields.io/github/last-commit/MRi-LE/Home-AssistantConfig/main.svg
 [commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-AssistantConfig.svg
