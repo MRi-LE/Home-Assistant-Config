@@ -79,7 +79,7 @@
 !shell_commands/**/*
 
 # WWW directory (static files for Lovelace/frontend)
-www/
+www/community/*
 www/**/*.js
 www/**/*.css
 www/**/*.html
