@@ -1,4 +1,4 @@
-name: Check Home Assistant Config
+name: Home Assistant CI
 
 # Run this on every push or pull request
 on:
