@@ -7,7 +7,6 @@
 
 # Track this file
 !.gitignore
-.github
 
 # Core configuration files
 !configuration.yaml
@@ -15,7 +14,6 @@
 !scripts.yaml
 !scenes.yaml
 !known_devices.yaml
-!template.yaml
 
 # Domain-specific configuration files (include all that might be present)
 !climate.yaml
@@ -45,14 +43,52 @@
 !customize_domain.yaml
 !customize_glob.yaml
 
-
+# Packages directory
+!packages/
+!packages/**/*.yaml
+!packages/**/*.yml
 
 # Blueprints
 blueprints/
-blueprints/**/*.yaml
-blueprints/**/*.yml
+!blueprints/**/*.yaml
+!blueprints/**/*.yml
 
+# Packages
+packages/
+packages/**/*.yaml
+packages/**/*.yml
 
+# AppDaemon
+appdaemon/
+appdaemon/appdaemon.yaml
+appdaemon/apps/
+appdaemon/apps/**/*.py
+appdaemon/apps/**/*.yaml
+appdaemon/apps/**/*.yml
+
+appdaemon/dashboards/
+appdaemon/dashboards/**/*.dash
+# Exclude AppDaemon runtime files
+appdaemon/compiled/
+appdaemon/namespaces/
+appdaemon/www/
+
+# Node-RED (if used)
+node-red/
+node-red/**/*.json
+node-red/**/*.js
+node-red/**/node_modules/
+
+# Zigbee2MQTT
+zigbee2mqtt/
+zigbee2mqtt/**/*.yaml
+zigbee2mqtt/**/*.yml
+zigbee2mqtt/**/*.json
+
+# ESPresense
+espresense/
+espresense/**/*.yaml
+espresense/**/*.yml
 
 # MQTT discovery or other integrations
 !mqtt/
@@ -79,18 +115,18 @@ blueprints/**/*.yml
 !shell_commands/**/*
 
 # WWW directory (static files for Lovelace/frontend)
-www/community/
-www/**/*.js
-www/**/*.css
-www/**/*.html
-www/**/*.json
-www/**/*.yaml
-www/**/*.yml
+www/
+!www/**/*.js
+!www/**/*.css
+!www/**/*.html
+!www/**/*.json
+!www/**/*.yaml
+!www/**/*.yml
 
 # Allow additional file types for custom cards/resources
-www/**/*.ts
-www/**/*.map
-www/**/*.LICENSE.txt
+!www/**/*.ts
+!www/**/*.map
+!www/**/*.LICENSE.txt
 # Exclude certain auto-generated or large files in www
 www/**/*.gz
 
@@ -111,6 +147,22 @@ www/community/advanced-camera-card/*
 # Addon configurations - Allow essential config files only
 addon_configs/**/*
 addon_configs/*/
+# Node-RED addon configs
+!addon_configs/*/flows.json
+!addon_configs/*/package.json
+!addon_configs/*/settings.js
+!addon_configs/*/.config.nodes.json
+!addon_configs/*/.config.runtime.json  
+!addon_configs/*/.config.users.json
+!addon_configs/*/node-red-contrib-*.json
+# Exclude Node-RED runtime files
+addon_configs/*/node_modules/
+addon_configs/*/.flows.json.backup
+addon_configs/*/context/
+addon_configs/*/nodes/
+addon_configs/*/lib/
+addon_configs/*/.config*.backup
+addon_configs/*/.npm/
 
 # Exclude all runtime data and cache directories
 .storage/
