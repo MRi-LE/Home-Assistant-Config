@@ -4,7 +4,7 @@
 |:---:|:---:|
 | Shows whether the configuration in this repo is valid | Shows how up to date this repo is |
 | [![GitHub issues][issues-shield]][issues] | [![HA Version][ha-version-shield]][home-assistant] |
-| I now use the issues as a TODO list | Current Home Assistant that I use |
+| I am using this as a TODO list | Current Home Assistant Version |
 | ![Project Maintenance][maintenance-shield] | [![Commit Activity][commit-activity-shield]][commits] |
 | Is this repository still actively maintained? | Shows how active I am with this repo annually |
 
@@ -20,7 +20,7 @@
 - [Google Home][google_home] (WiFi)
 - Z-Wave
 
----
+
 
 ## Learn More in My Blog
 
@@ -29,9 +29,10 @@ I’ve written a series of blog posts on my website that dive into particular pa
 
 | Article | Is going about |
 | -- | -- |
-| [- Getting started with Github][blog1] | Manage & Share your HomeAssistant configuration on GitHub |
-| [- Fire Alarm!][blog2] | HA will call your phone via FritzBox  |
-| [- Where is my ... ][blog3] | Apple Airtag Integration Home Assistant |
+| <a href="https://michaelrichter.online/manage-share-your-homeassistant-configuration-on-github/" target="_blank">Getting started with GitHub</a> | Manage & Share your Home Assistant configuration on GitHub |
+| <a href="https://michaelrichter.online/apple-airtag-integration-home-assistant/" target="_blank">Fire Alarm!</a> | HA will call your phone via FritzBox |
+| <a href="https://michaelrichter.online/fire-alarm-ha-will-call-your-phone-via-fritzbox/" target="_blank">Where is my …</a> | Apple Airtag Integration Home Assistant |
+
 
 ## Links
 
@@ -65,7 +66,4 @@ I’ve written a series of blog posts on my website that dive into particular pa
 <!-- Products -->
 [google_home]: https://store.google.com/magazine/compare_nest_speakers_displays
 
-<!-- Blogs -->
-[blog1]:https://michaelrichter.online/manage-share-your-homeassistant-configuration-on-github/
-[blog2]:https://michaelrichter.online/apple-airtag-integration-home-assistant/
-[blog3]:https://michaelrichter.online/fire-alarm-ha-will-call-your-phone-via-fritzbox/
+
