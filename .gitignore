@@ -79,7 +79,7 @@
 !shell_commands/**/*
 
 # WWW directory (static files for Lovelace/frontend)
-www/community/*
+www/community/
 www/**/*.js
 www/**/*.css
 www/**/*.html
@@ -111,22 +111,6 @@ www/community/advanced-camera-card/*
 # Addon configurations - Allow essential config files only
 addon_configs/**/*
 !addon_configs/*/
-# Node-RED addon configs
-!addon_configs/*/flows.json
-!addon_configs/*/package.json
-!addon_configs/*/settings.js
-!addon_configs/*/.config.nodes.json
-!addon_configs/*/.config.runtime.json  
-!addon_configs/*/.config.users.json
-!addon_configs/*/node-red-contrib-*.json
-# Exclude Node-RED runtime files
-addon_configs/*/node_modules/
-addon_configs/*/.flows.json.backup
-addon_configs/*/context/
-addon_configs/*/nodes/
-addon_configs/*/lib/
-addon_configs/*/.config*.backup
-addon_configs/*/.npm/
 
 # Exclude all runtime data and cache directories
 .storage/
