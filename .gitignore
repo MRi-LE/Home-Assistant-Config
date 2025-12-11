@@ -50,8 +50,8 @@
 
 # Blueprints
 blueprints/
-!blueprints/**/*.yaml
-!blueprints/**/*.yml
+blueprints/**/*.yaml
+blueprints/**/*.yml
 
 # Packages
 packages/
@@ -91,42 +91,42 @@ espresense/**/*.yaml
 espresense/**/*.yml
 
 # MQTT discovery or other integrations
-!mqtt/
-!mqtt/**/*.yaml
-!mqtt/**/*.yml
+mqtt/
+mqtt/**/*.yaml
+mqtt/**/*.yml
 
 # Lovelace UI configuration files (if not stored in .storage)
-!ui-lovelace.yaml
-!lovelace/
-!lovelace/**/*.yaml
-!lovelace/**/*.yml
+ui-lovelace.yaml
+lovelace/
+lovelace/**/*.yaml
+lovelace/**/*.yml
 
 # Themes
-!themes/
-!themes/**/*.yaml
-!themes/**/*.yml
+themes/
+themes/**/*.yaml
+themes/**/*.yml
 
 # Python scripts
 !python_scripts/
 !python_scripts/**/*.py
 
 # Shell commands and scripts
-!shell_commands/
-!shell_commands/**/*
+shell/
+shell/**/*
 
 # WWW directory (static files for Lovelace/frontend)
 www/
-!www/**/*.js
-!www/**/*.css
-!www/**/*.html
-!www/**/*.json
-!www/**/*.yaml
-!www/**/*.yml
+www/**/*.js
+www/**/*.css
+www/**/*.html
+www/**/*.json
+www/**/*.yaml
+www/**/*.yml
 
 # Allow additional file types for custom cards/resources
-!www/**/*.ts
-!www/**/*.map
-!www/**/*.LICENSE.txt
+www/**/*.ts
+www/**/*.map
+www/**/*.LICENSE.txt
 # Exclude certain auto-generated or large files in www
 www/**/*.gz
 
@@ -146,7 +146,7 @@ www/community/advanced-camera-card/*
 
 # Addon configurations - Allow essential config files only
 addon_configs/**/*
-addon_configs/*/
+!addon_configs/*/
 # Node-RED addon configs
 !addon_configs/*/flows.json
 !addon_configs/*/package.json
