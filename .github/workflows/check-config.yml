@@ -22,6 +22,6 @@ jobs:
       - name: 🚀 Run Home Assistant Configuration Check
         uses: frenck/action-home-assistant@v1
         with:
-          path: "./config"         # Path to your HA config directory
+          path: "."         # Path to your HA config directory
           secrets: "secrets.fake.yaml"  # Your fake secrets file
           version: stable          # Home Assistant version to test against
