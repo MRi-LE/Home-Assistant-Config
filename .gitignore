@@ -79,18 +79,18 @@
 !shell_commands/**/*
 
 # WWW directory (static files for Lovelace/frontend)
-#!www/
-#!www/**/*.js
-#!www/**/*.css
-#!www/**/*.html
-#!www/**/*.json
-#!www/**/*.yaml
-#!www/**/*.yml
+www/
+www/**/*.js
+www/**/*.css
+www/**/*.html
+www/**/*.json
+www/**/*.yaml
+www/**/*.yml
 
 # Allow additional file types for custom cards/resources
-#!www/**/*.ts
-#!www/**/*.map
-#!www/**/*.LICENSE.txt
+www/**/*.ts
+www/**/*.map
+www/**/*.LICENSE.txt
 # Exclude certain auto-generated or large files in www
 www/**/*.gz
 
