@@ -45,22 +45,22 @@ I’ve written a series of blog posts on my website that dive into particular pa
 
 <!-- Shields -->
 [homeassistantci-shield]: https://github.com/MRi-LE/Home-Assistant-Config/actions/workflows/check-config.yml/badge.svg
-[homeassistantci]: https://github.com/MRi-LE/Home-AssistantConfig/actions/workflows/check-config.yml
-[last-commit-shield]: https://img.shields.io/github/last-commit/MRi-LE/Home-AssistantConfig/main.svg
-[commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-AssistantConfig.svg
-[issues-shield]: https://img.shields.io/github/issues/MRi-LE/Home-AssistantConfig.svg
-[issues]: https://github.com/MRi-LE/Home-AssistantConfig/issues
-[stars-shield]: https://img.shields.io/github/stars/MRi-LE/Home-AssistantConfig.svg
+[homeassistantci]: https://github.com/MRi-LE/Home-Assistant-Config/actions/workflows/check-config.yml
+[last-commit-shield]: https://img.shields.io/github/last-commit/MRi-LE/Home-Assistant-Config/main.svg
+[commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-Assistant-Config.svg
+[issues-shield]: https://img.shields.io/github/issues/MRi-LE/Home-Assistant-Config.svg
+[issues]: https://github.com/MRi-LE/Home-Assistant-Config/issues
+[stars-shield]: https://img.shields.io/github/stars/MRi-LE/Home-Assistant-Config.svg
 
-[forks-shield]: https://img.shields.io/github/forks/MRi-LE/Home-AssistantConfig.svg
+[forks-shield]: https://img.shields.io/github/forks/MRi-LE/Home-Assistant-Config.svg
 [forks]: https://github.com/MRi-LE/Home-AssistantConfig/network/members
-[commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-AssistantConfig.svg
+[commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-Assistant-Config.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2025.12.3-blue.svg
 
 <!-- Repository links -->
-[commits]: https://github.com/MRi-LE/Home-AssistantConfig/commits/main
-[stars]: https://github.com/MRi-LE/Home-AssistantConfig/stargazers
+[commits]: https://github.com/MRi-LE/Home-Assistant-Config/commits/main
+[stars]: https://github.com/MRi-LE/Home-Assistant-Config/stargazers
 [home-assistant]: https://home-assistant.io
 
 <!-- Products -->
