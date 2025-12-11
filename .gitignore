@@ -48,7 +48,7 @@
 
 
 # Blueprints
-!blueprints/
+#!blueprints/
 !blueprints/**/*.yaml
 !blueprints/**/*.yml
 
