@@ -11,6 +11,7 @@
 # Core configuration files
 !configuration.yaml
 !automations.yaml
+!yaml_automations.yaml
 !scripts.yaml
 !scenes.yaml
 !known_devices.yaml
