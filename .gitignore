@@ -50,9 +50,9 @@
 !packages/**/*.yml
 
 # Blueprints
-blueprints/
-blueprints/**/*.yaml
-blueprints/**/*.yml
+#blueprints/
+#blueprints/**/*.yaml
+#blueprints/**/*.yml
 
 # Packages
 packages/
@@ -142,7 +142,7 @@ www/community/advanced-camera-card/*
 
 # Allow documentation files only in root
 !*.md
-/**/*.md 
+#/**/*.md 
 
 
 # Addon configurations - Allow essential config files only
