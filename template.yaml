@@ -1,0 +1,334 @@
+- sensor:
+    - name: "adjusted_power_1_0_1"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_1') |int/2 )}}"
+    - name: "adjusted_power_1_0_2"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_2') |int/2)}}"
+    - name: "adjusted_power_1_0_3"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_3') |int/2)}}"
+    - name: "adjusted_power_1_0_4"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_4') |int/2)}}"
+    - name: "adjusted_power_1_0_5"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_5') |int/2)}}"      
+    - name: "adjusted_power_1_0_6"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_6') |int/2)}}"
+    - name: "adjusted_power_1_0_7"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_7') |int/2)}}"
+    - name: "adjusted_power_1_0_8"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_8') |int/2)}}"
+    - name: "adjusted_power_1_0_9"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_9') |int/2)}}"      
+    - name: "adjusted_power_1_0_10"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_10') |int/2)}}"      
+
+    - name: "adjusted_power_1_0_11"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_11') |int/2)}}"
+    - name: "adjusted_power_1_0_12"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_12') |int/2)}}"
+    - name: "adjusted_power_1_0_13"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_13') |int/2)}}"
+    - name: "adjusted_power_1_0_14"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_14') |int/2)}}"
+    - name: "adjusted_power_1_0_15"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_15') |int/2)}}"      
+    - name: "adjusted_power_1_0_16"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_16') |int/2)}}"
+    - name: "adjusted_power_1_0_17"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_17') |int/2)}}"
+    - name: "adjusted_power_1_0_18"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_18') |int/2)}}"
+    - name: "adjusted_power_1_0_19"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_19') |int/2)}}"      
+    - name: "adjusted_power_1_0_20"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_20') |int/2)}}"  
+
+    - name: "adjusted_power_1_0_21"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_21') |int/2)}}"
+    - name: "adjusted_power_1_0_22"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_22') |int/2)}}"
+    - name: "adjusted_power_1_0_23"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_23') |int/2)}}"
+    - name: "adjusted_power_1_0_24"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_24') |int/2)}}"
+    - name: "adjusted_power_1_0_25"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_25') |int/2)}}"      
+    - name: "adjusted_power_1_0_26"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_26') |int/2)}}"
+    - name: "adjusted_power_1_0_27"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_27') |int/2)}}"
+    - name: "adjusted_power_1_0_28"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_28') |int/2)}}"
+    - name: "adjusted_power_1_0_29"
+      unit_of_measurement: "W"
+      device_class: "power"
+      state_class: "measurement"
+      state: "{{ (states('sensor.power_1_0_29') |int/2)}}"      
+
+
+         
+    - name: "weight_user1"       
+      state: >-
+          {% set weight = states('sensor.ble_weight_1c975bf2fc7e') | float %}
+            {% if 70 <= weight <= 90 %}
+              {{ states("sensor.ble_weight_1c975bf2fc7e") }}
+            {% else %}
+              {{ states("sensor.weight_user1") }}
+            {% endif %}
+      unit_of_measurement: 'kg'
+      
+        
+    - name: "weight_user2"       
+      state: >-
+          {% set weight = states('sensor.ble_weight_1c975bf2fc7e') | float %}
+            {% if 50 <= weight <= 65 %}
+              {{ states("sensor.ble_weight_1c975bf2fc7e") }}
+            {% else %}
+              {{ states("sensor.weight_user2") }}
+            {% endif %}
+      unit_of_measurement: 'kg'
+
+    - name: "impedance_user1"
+      state: >-
+          {% set weight = states('sensor.ble_weight_1c975bf2fc7e') | float %}
+            {% if 70 <= weight <= 90 %}
+              {{ states("sensor.ble_impedance_1c975bf2fc7e") }}
+            {% else %}
+              {{ states("sensor.impedance_user1") }}
+            {% endif %}
+      unit_of_measurement: 'ohm'
+        
+
+    - name: "impedance_user2"        
+      state: >-
+          {% set weight = states('sensor.ble_weight_1c975bf2fc7e') | float %}
+            {% if 50 <= weight <= 65 %}
+              {{ states("sensor.ble_impedance_1c975bf2fc7e") }}
+            {% else %}
+              {{ states("sensor.impedance_user2") }}
+            {% endif %}
+      unit_of_measurement: 'ohm'
+      
+      
+      
+      
+      
+      
+    - sensor:
+      - name: airtag_rosa_address
+        icon: mdi:map-marker
+        state: >
+          {% set text1 = states('input_text.airtag') %}
+          {% set text2 = states('input_text.airtag_2') %}
+          {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+
+          {% if 'Rosa' in text1 %}
+            {% set source = text1 %}
+          {% elif 'Rosa' in text2 %}
+            {% set source = text2 %}
+          {% else %}
+            {% set source = '' %}
+          {% endif %}
+
+          {% if source %}
+            {% set parts = source.split('Rosa', 1) %}
+            {% if parts | length > 1 %}
+              {% set addr = parts[1].split('•', 1)[0] | trim %}
+            {% else %}
+              {% set addr = home %}
+            {% endif %}
+          {% else %}
+            {% set addr = home %}
+          {% endif %}
+
+          {% if addr == '' or 'Privat' in addr %}
+            {{ home }}
+          {% else %}
+            {{ addr ~ ', Leipzig, Germany' }}
+          {% endif %}
+
+    - default_entity_id: sensor.airtag_rosa
+      icon: mdi:account-circle
+      attributes:
+        latitude: '{% if ":" in states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_rosa_geo'',''lat'') }} {% endif
+        %}'
+        longitude: '{% if ":" in states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_rosa_geo'',''lon'') }} {% endif
+        %}'
+        status: '{% if ":" in states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0]
+        %}unavailable {% else %}available {% endif %}'
+        last_update: '{{ as_timestamp(states.input_text.airtag.last_updated)|timestamp_custom
+        (''%d/%m/%Y %H:%Mh'') }}'
+      name: Rosa
+      state: '{% set home = "Privat" %}  {% if ":" in states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0]
+      %}  {{ states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0].split('','')[0]
+      }} {% elif home in states(''input_text.airtag'').split(''Rosa'')[1].split(''•'')[0]
+      %}Home {% else %} {{ states(''sensor.airtag_rosa_geo'') }} {% endif %}'
+      
+      
+    - default_entity_id: sensor.airtag_lila
+      icon: mdi:account-circle
+      attributes:
+        latitude: '{% if ":" in states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_lila_geo'',''lat'') }} {% endif
+        %}'
+        longitude: '{% if ":" in states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_lila_geo'',''lon'') }} {% endif
+        %}'
+        status: '{% if ":" in states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0]
+        %}unavailable {% else %}available {% endif %}'
+        last_update: '{{ as_timestamp(states.input_text.airtag.last_updated)|timestamp_custom
+        (''%d/%m/%Y %H:%Mh'') }}'
+      name: Lila
+      state: '{% set home = "Privat" %}  {% if ":" in states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0]
+      %}  {{ states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0].split('','')[0]
+      }} {% elif home in states(''input_text.airtag'').split(''Lila'')[1].split(''•'')[0]
+      %}Home {% else %} {{ states(''sensor.airtag_lila_geo'') }} {% endif %}'
+      
+    - default_entity_id: sensor.airtag_blau
+      icon: mdi:account-circle
+      attributes:
+        latitude: '{% if ":" in states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_blau_geo'',''lat'') }} {% endif
+        %}'
+        longitude: '{% if ":" in states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_blau_geo'',''lon'') }} {% endif
+        %}'
+        status: '{% if ":" in states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0]
+        %}unavailable {% else %}available {% endif %}'
+        last_update: '{{ as_timestamp(states.input_text.airtag.last_updated)|timestamp_custom
+        (''%d/%m/%Y %H:%Mh'') }}'
+      name: Blau
+      state: '{% set home = "Privat" %}  {% if ":" in states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0]
+      %}  {{ states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0].split('','')[0]
+      }} {% elif home in states(''input_text.airtag'').split(''Blau'')[1].split(''•'')[0]
+      %}Home {% else %} {{ states(''sensor.airtag_blau_geo'') }} {% endif %}'
+      
+    - default_entity_id: sensor.airtag_card
+      icon: mdi:card-account-details-outline
+      attributes:
+        latitude: '{% if ":" in states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_card_geo'',''lat'') }} {% endif
+        %}'
+        longitude: '{% if ":" in states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_card_geo'',''lon'') }} {% endif
+        %}'
+        status: '{% if ":" in states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0]
+        %}unavailable {% else %}available {% endif %}'
+        last_update: '{{ as_timestamp(states.input_text.airtag.last_updated)|timestamp_custom
+        (''%d/%m/%Y %H:%Mh'') }}'
+      name: Card
+      state: '{% set home = "Privat" %}  {% if ":" in states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0]
+      %}  {{ states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0].split('','')[0]
+      }} {% elif home in states(''input_text.airtag'').split(''Card'')[1].split(''•'')[0]
+      %}Home {% else %} {{ states(''sensor.airtag_card_geo'') }} {% endif %}'
+      
+    - default_entity_id: sensor.airtag_airtag
+      icon: mdi:tag
+      attributes:
+        latitude: '{% if ":" in states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_airtag_geo'',''lat'') }} {%
+        endif %}'
+        longitude: '{% if ":" in states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0]
+        %}null {% else %}{{ state_attr(''sensor.airtag_airtag_geo'',''lon'') }} {%
+        endif %}'
+        status: '{% if ":" in states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0]
+        %}unavailable {% else %}available {% endif %}'
+        last_update: '{{ as_timestamp(states.input_text.airtag.last_updated)|timestamp_custom
+        (''%d/%m/%Y %H:%Mh'') }}'
+      name: Airtag
+      state: '{% set home = "Privat" %}  {% if ":" in states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0]
+      %}  {{ states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0].split('','')[0]
+      }} {% elif home in states(''input_text.airtag'').split(''Airtag'')[1].split(''•'')[0]
+      %}Home {% else %} {{ states(''sensor.airtag_airtag_geo'') }} {% endif %}'
+      
+      
+      
+      
+      
+      
+      
+      

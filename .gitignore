@@ -50,9 +50,9 @@
 !packages/**/*.yml
 
 # Blueprints
-blueprints/
-blueprints/**/*.yaml
-blueprints/**/*.yml
+#blueprints/
+#blueprints/**/*.yaml
+#blueprints/**/*.yml
 
 # Packages
 packages/
