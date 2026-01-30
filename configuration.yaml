@@ -1,0 +1,113 @@
+
+# Configure a default setup of Home Assistant GUI
+default_config:
+
+shell_command:
+  git_update: "bash /config/shell/git_update.sh '{{ states.input_text.git_commit_comment.state }}'"
+
+lovelace:
+  mode: storage
+  # Add yaml dashboards
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: Mobile
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: mobile-dashboard.yaml
+      
+    
+      
+frontend:
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js
+    
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_translate_say
+    language: 'de'
+    cache: true
+    cache_dir: /config/www/tts
+    time_memory: 300
+
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensor.yaml
+#alert: !include alert.yaml
+template: !include template.yaml
+
+
+
+
+
+
+
+alarm_control_panel:
+ - platform: manual
+   name: Hausalarm
+   #code: "1234"
+   code_arm_required: false
+   arming_time: 120
+   delay_time: 60
+   trigger_time: 600
+   disarmed:
+     trigger_time: 0
+   armed_home:
+     arming_time: 0
+     delay_time: 0
+
+
+
+## Michael ##
+
+## lower IO to SDCARD ##
+logger:
+  default: critical
+
+recorder:
+  purge_keep_days: 14
+  commit_interval: 1800
+
+## enable customization for Entity friendly names ##
+
+homeassistant:
+  customize: !include customize.yaml
+
+##velux:
+  #host: !secret velux_host
+  #password: !secret velux_pass
+
+
+#device_tracker:
+#  - platform: bluetooth_le_tracker
+
+
+#camera:
+#  - platform: local_file
+#    file_path: /media/front_porch/last_motion.jpg # match your 'File Path' location from the Blueprint
+#    name: Front Porch Last Motion
+
+## automatisches erkennen BT Geräte 
+bluetooth:
+
+
+switch:
+  - platform: wake_on_lan
+    name: "WD-NAS"
+    host: 192.168.178.56
+    mac: 00:90:A9:F2:AC:94
+
+  - platform: wake_on_lan
+    name: "CLOUD"
+    host: 192.168.178.105
+    mac: 6C:1F:F7:3C:77:80
+
+  - platform: wake_on_lan
+    name: "ESX"
+    host: 192.168.178.200
+    mac: 64:00:6A:5E:A7:A1

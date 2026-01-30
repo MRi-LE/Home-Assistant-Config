@@ -1,0 +1,228 @@
+# Home Assistant .gitignore - Comprehensive Whitelist Approach
+# Deny everything by default, then explicitly allow configuration files
+
+# Deny everything first
+*
+!*/
+
+# Track this file
+!.gitignore
+
+# Core configuration files
+!configuration.yaml
+!automations.yaml
+!yaml_automations.yaml
+!scripts.yaml
+!scenes.yaml
+!known_devices.yaml
+
+# Domain-specific configuration files (include all that might be present)
+!climate.yaml
+!cover.yaml
+!groups.yaml
+!input_boolean.yaml
+!input_button.yaml
+!input_datetime.yaml
+!input_number.yaml
+!input_select.yaml
+!input_text.yaml
+!light.yaml
+!media_player.yaml
+!switch.yaml
+!sensor.yaml
+!binary_sensor.yaml
+!camera.yaml
+!device_tracker.yaml
+!notify.yaml
+!zone.yaml
+!person.yaml
+!recorder.yaml
+!history.yaml
+!logbook.yaml
+!logger.yaml
+!customize.yaml
+!customize_domain.yaml
+!customize_glob.yaml
+
+# Packages directory
+!packages/
+!packages/**/*.yaml
+!packages/**/*.yml
+
+# Blueprints
+blueprints/
+blueprints/**/*.yaml
+blueprints/**/*.yml
+
+# Packages
+packages/
+packages/**/*.yaml
+packages/**/*.yml
+
+# AppDaemon
+appdaemon/
+appdaemon/appdaemon.yaml
+appdaemon/apps/
+appdaemon/apps/**/*.py
+appdaemon/apps/**/*.yaml
+appdaemon/apps/**/*.yml
+
+appdaemon/dashboards/
+appdaemon/dashboards/**/*.dash
+# Exclude AppDaemon runtime files
+appdaemon/compiled/
+appdaemon/namespaces/
+appdaemon/www/
+
+# Node-RED (if used)
+node-red/
+node-red/**/*.json
+node-red/**/*.js
+node-red/**/node_modules/
+
+# Zigbee2MQTT
+zigbee2mqtt/
+zigbee2mqtt/**/*.yaml
+zigbee2mqtt/**/*.yml
+zigbee2mqtt/**/*.json
+
+# ESPresense
+espresense/
+espresense/**/*.yaml
+espresense/**/*.yml
+
+# MQTT discovery or other integrations
+mqtt/
+mqtt/**/*.yaml
+mqtt/**/*.yml
+
+# Lovelace UI configuration files (if not stored in .storage)
+ui-lovelace.yaml
+lovelace/
+lovelace/**/*.yaml
+lovelace/**/*.yml
+
+# Themes
+themes/
+themes/**/*.yaml
+themes/**/*.yml
+
+# Python scripts
+!python_scripts/
+!python_scripts/**/*.py
+
+# Shell commands and scripts
+shell/
+shell/**/*
+
+# WWW directory (static files for Lovelace/frontend)
+www/
+www/**/*.js
+www/**/*.css
+www/**/*.html
+www/**/*.json
+www/**/*.yaml
+www/**/*.yml
+
+# Allow additional file types for custom cards/resources
+www/**/*.ts
+www/**/*.map
+www/**/*.LICENSE.txt
+# Exclude certain auto-generated or large files in www
+www/**/*.gz
+
+# Exclude frigate as it stores config in lovelace
+www/community/frigate-hass-card/*
+
+# Exclude advanced-camera-card 
+www/community/advanced-camera-card/*
+
+# Version tracking
+!.HA_VERSION
+
+# Allow documentation files only in root
+!*.md
+/**/*.md 
+
+
+# Addon configurations - Allow essential config files only
+addon_configs/**/*
+!addon_configs/*/
+# Node-RED addon configs
+!addon_configs/*/flows.json
+!addon_configs/*/package.json
+!addon_configs/*/settings.js
+!addon_configs/*/.config.nodes.json
+!addon_configs/*/.config.runtime.json  
+!addon_configs/*/.config.users.json
+!addon_configs/*/node-red-contrib-*.json
+# Exclude Node-RED runtime files
+addon_configs/*/node_modules/
+addon_configs/*/.flows.json.backup
+addon_configs/*/context/
+addon_configs/*/nodes/
+addon_configs/*/lib/
+addon_configs/*/.config*.backup
+addon_configs/*/.npm/
+
+# Exclude all runtime data and cache directories
+.storage/
+.cloud/
+deps/
+tts/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Exclude database and log files
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.log
+**/*.log.*
+**/*.pid
+**/*.sock
+**/*.tmp
+**/*.backup
+**/*.bak
+
+# Exclude Home Assistant specific runtime directories
+components/
+.uuid
+.HA_VERSION.*
+
+# Exclude large media files that shouldn't be in Git
+**/*.mp4
+**/*.avi
+**/*.mkv
+**/*.mov
+**/*.mp3
+**/*.wav
+**/*.flac
+
+# Exclude certificate and key files (security)
+**/*.pem
+**/*.key
+**/*.crt
+**/*.p12
+**/*.pfx
+
+# Exclude service account and credential files
+**/SERVICE_ACCOUNT.JSON
+**/client_secret*.json
+**/google_assistant_*.json
+**/*_credentials.json
+
+# Exclude secrets file (move sensitive data here)
+secrets.yaml
+
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

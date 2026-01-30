@@ -1,0 +1,278 @@
+- id: '1632477673388'
+  alias: Alarm - Trigger when sensors go off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open_2
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open
+    to: 'on'
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.hausalarm
+      state: armed_home
+    - condition: state
+      entity_id: alarm_control_panel.hausalarm
+      state: armed_away
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    target:
+      entity_id: alarm_control_panel.hausalarm
+  mode: single
+- id: '1632481300927'
+  alias: Alarm - Triggered
+  description: ''
+  triggers:
+  - entity_id: alarm_control_panel.hausalarm
+    to: triggered
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
+    target:
+      entity_id: switch.high_volume_siren_95_db_and_led_strobe_light
+    action: homeassistant.turn_on
+  mode: single
+- id: '1632481381999'
+  alias: Alarm - Disarmed
+  description: ''
+  triggers:
+  - entity_id: alarm_control_panel.hausalarm
+    to: disarmed
+    trigger: state
+  conditions: []
+  actions:
+  - data: {}
+    target:
+      entity_id: switch.high_volume_siren_95_db_and_led_strobe_light
+    action: homeassistant.turn_off
+  mode: single
+- id: '1638199786297'
+  alias: Stehlampe Wohnzimmer
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+    id: morgens_an
+  - platform: sun
+    event: sunset
+    offset: -00:20:00
+    id: sonnenuntergang
+  - platform: time
+    at: '22:30:00'
+    id: abends_aus
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: morgens_an
+      - condition: state
+        entity_id: light.stehlampe
+        state: 'off'
+      - condition: sun
+        before: sunrise
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.stehlampe
+        data: {}
+    - conditions:
+      - condition: trigger
+        id: abends_aus
+      - condition: state
+        entity_id: light.stehlampe
+        state: 'on'
+      sequence:
+      - service: light.turn_off
+        target:
+          entity_id: light.stehlampe
+        data: {}
+    - conditions:
+      - condition: trigger
+        id: sonnenuntergang
+      sequence:
+      - service: light.turn_on
+        data: {}
+        target:
+          entity_id: light.stehlampe
+    default: []
+  mode: single
+- id: '1646759202317'
+  alias: Velux KFL Reboot
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: shutdown
+  condition: []
+  action:
+  - service: velux.reboot_gateway
+    data: {}
+  mode: single
+
+- id: '1657822394319'
+  alias: Wohnzimmer - Licht bei Bewegung
+  description: ''
+  triggers:
+  - entity_id: binary_sensor.trisensor8_flur_motion_detection
+    id: Licht an
+    to: 'on'
+    trigger: state
+  - entity_id: binary_sensor.trisensor8_flur_motion_detection
+    id: Licht aus
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    trigger: state
+  conditions:
+  - condition: state
+    entity_id: light.stehlampe
+    state:
+    - 'off'
+  - condition: time
+    after: '23:00:00'
+    before: 06:00:00
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Licht an
+      - condition: state
+        entity_id: light.stehlampe
+        state: 'off'
+      sequence:
+      - target:
+          entity_id: light.stehlampe
+        data: {}
+        action: light.turn_on
+      - action: switch.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: switch.smart_switch_7
+    - conditions:
+      - condition: trigger
+        id: Licht aus
+      - condition: state
+        entity_id: binary_sensor.trisensor8_flur_motion_detection
+        state: 'off'
+      - condition: state
+        entity_id: light.stehlampe
+        state: 'on'
+      sequence:
+      - target:
+          entity_id: light.stehlampe
+        data: {}
+        action: light.turn_off
+    default: []
+  mode: single
+- id: '1709550850830'
+  alias: CZ500
+  description: CZ500
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.i81hb_cell_motion_detection
+    from: 'off'
+    to: 'on'
+  action:
+  - delay: 0
+  - service: camera.snapshot
+    entity_id: camera.i81hb_mainstream
+    data:
+      filename: /media/CZ500/last_motion.jpg
+  - service: camera.snapshot
+    entity_id: camera.i81hb_mainstream
+    data:
+      filename: /media/CZ500/archive/{{ now().strftime("%d.%m.%Y-%H:%M:%S") }}.jpg
+  mode: single
+- id: '1719209158444'
+  alias: SteckdoseBad
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.steckdose_bad_2
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id:
+    - switch.steckdose_bad_2
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.steckdose_bad_2
+  - condition: state
+    entity_id: switch.steckdose_bad_2
+    state: 'off'
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.steckdose_bad_2
+  - condition: state
+    entity_id: switch.steckdose_bad_2
+    state: 'on'
+  mode: single
+- id: '1756990478169'
+  alias: Rauchmelder Reset
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - scene.alarm_aus
+  conditions: []
+  actions:
+  - device_id: fec760861398ad5e410551f69becb3f4
+    domain: button
+    entity_id: f4d7a87de69e1e1f27f10ef7de76b429
+    type: press
+  mode: single
+- id: '1756992638571'
+  alias: Feueralarm Büro
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.smart_smoke_sensor_smoke_alarm_smoke_detected_2
+    from:
+    to: 'on'
+  conditions: []
+  actions:
+  - action: notify.mobile_app_michi_handy
+    metadata: {}
+    data:
+      message: FEUER
+      title: Feueralarm Büro
+  mode: single
+- id: '1762414740451'
+  alias: Sicherheit - Rauchalarm entdeckt
+  description: ''
+  triggers:
+  - entity_id:
+    - binary_sensor.rauchmelder
+    to: 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      message: '{% for entity in trigger.to_state.attributes.entity_id %} {% if states(entity)
+        == ''on'' %} {{ state_attr(entity,''friendly_name'') }}  meldet Rauchalarm!  {%
+        endif %} {% endfor %}'
+      title: Rauch endeckt!
+      data:
+        sound: persistent
+        priority: 2
+        retry: 60
+        expire: 3600
+    action: notify.pushover
+  mode: single

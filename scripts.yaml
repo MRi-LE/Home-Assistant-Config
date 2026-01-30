@@ -1,0 +1,87 @@
+spotify_start:
+  alias: 'Spotify: Start Playback'
+  sequence:
+  - service: spotcast.start
+    data:
+      entity_id: '{% if is_state(''input_select.chromecast_audio'', ''Wohnzimmer'')
+        %} media_player.wohnzimmer {% elif is_state(''input_select.chromecast_audio'',
+        ''Haus'') %} media_player.haus {% elif is_state(''input_select.chromecast_audio'',
+        ''Bad'') %} media_player.bad {% elif is_state(''input_select.chromecast_audio'',
+        ''Gästebad'') %} media_player.gastebad {% elif is_state(''input_select.chromecast_audio'',
+        ''Küche'') %} media_player.kuche {% elif is_state(''input_select.chromecast_audio'',
+        ''Philips TV'') %} media_player.philips_tv_2 {% elif is_state(''input_select.chromecast_audio'',
+        ''Office'') %} media_player.office {% endif %}'
+      force_playback: true
+  mode: single
+  icon: mdi:spotify
+staubsaugen_har:
+  alias: Staubsaugen HAR
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["1"], "iterations": 2, "customOrder": true}'
+  mode: single
+staubsaugen_kind_2:
+  alias: Staubsaugen Kind 2
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["7"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+staubsaugen_wohnzimmer:
+  alias: Staubsaugen Wohnzimmer
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["5"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+staubsaugen_wc:
+  alias: Staubsaugen WC
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["3"], "iterations": 2, "customOrder": true}'
+  mode: single
+'1633633015958':
+  alias: Staubsaugen Bad
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["1"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+staubsaugen_bedroom:
+  alias: Staubsaugen Bedroom
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["2"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+staubsaugen_floor:
+  alias: Staubsaugen Floor
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["8"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+staubsaugen_kind_1:
+  alias: Staubsaugen Kind 1
+  sequence:
+  - data:
+      topic: valetudo/D9/MapSegmentationCapability/clean/set
+      payload: '{"segment_ids": ["4"], "iterations": 2, "customOrder": true}'
+    action: mqtt.publish
+  mode: single
+github_update:
+  sequence:
+  - action: shell_command.git_update
+    metadata: {}
+    data: {}
+  alias: Github Update
+  description: ''

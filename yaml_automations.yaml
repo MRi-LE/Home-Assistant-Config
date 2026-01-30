@@ -1,0 +1,69 @@
+- id: '1639727566290'
+  alias: Rauchalarm Haus
+  description: ''
+  triggers:
+  - entity_id: binary_sensor.rauchmelderauchmelder
+    to: 'on'
+    id: rauchalarm
+    trigger: state
+  - entity_id: group.rauchmelder
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+    id: binary_sensor.rauchmelderauchmelder
+    trigger: state
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: rauchalarm
+      sequence:
+      - data:
+          title: FEUER ALARM
+          message: Rauchalarm im Haus ausgelöst
+        action: notify.mobile_app_michi_mobil
+      - data:
+          entity_id: media_player.haus
+          message: Achtung Achtung! Der Feueralarm wurde ausgelöst, bitte alle nach
+            draußen gehen.
+          language: de
+        action: tts.google_translate_say
+      - data:
+          message: '{% for entity in trigger.to_state.attributes.entity_id %}       {%
+            if states(entity) == ''on'' %} {{ state_attr(entity,''friendly_name'')
+            }} meldet Rauchalarm! {% endif %} {% endfor %}'
+          target: !secret my_mobile
+        action: notify.whatsapp
+    - conditions:
+      - condition: trigger
+        id: rauchalarm_5min
+      sequence:
+      - target:
+          entity_id: switch.high_volume_siren_95_db_and_led_strobe_light
+        data: {}
+        action: switch.turn_on
+      - action: scene.turn_on
+        target:
+          entity_id: scene.rollos_auf
+    default: []
+  mode: single
+- id: '1652173792845'
+  alias: Anruf bei Rauchalarm
+  description: ''
+  triggers:
+  - entity_id:
+    - binary_sensor.rauchmelder
+    to: 'on'
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      addon: 0d80d722_dss_voip
+      input:
+        call_sip_uri: !secret my_voip_number
+        message_tts: Achtung Feueralarm wurde ausgelöst
+    action: hassio.addon_stdin
+  mode: single

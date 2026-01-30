@@ -1,0 +1,158 @@
+#  - platform: google_keep
+#    username: !secrets google_keep_user
+#    password: !secrets google_keep_pass
+#    labels:
+#      - 'Home Assistant'
+#    pinned: true
+
+- platform: rest
+  name: airtag_airtag_geo
+  value_template: "{{ value_json.results[0].formatted }}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - lon
+    - lat
+  verify_ssl: true
+  scan_interval: 60 # every 15 min
+  force_update: true
+  resource_template: >
+    {% set address = states('input_text.airtag').split('Airtag')[1].split('•')[0].strip() %}
+    {% if "Privat" in address %}
+      {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + home | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% else %}
+      {% set fix = address + ", Leipzig, Germany" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + fix | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% endif %}
+
+
+
+
+
+      
+      
+
+- platform: rest
+  name: airtag_lila_geo
+  value_template: "{{ value_json.results[0].formatted }}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - lon
+    - lat
+  verify_ssl: true
+  scan_interval: 60 # every 15 min
+  force_update: true
+  resource_template: >
+    {% set address = states('input_text.airtag').split('Lila')[1].split('•')[0].strip() %}
+    {% if "Privat" in address %}
+      {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + home | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% else %}
+      {% set fix = address + ", Leipzig, Germany" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + fix | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% endif %}
+
+
+      
+- platform: rest
+  name: airtag_blau_geo
+  value_template: "{{ value_json.results[0].formatted }}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - lon
+    - lat
+  verify_ssl: true
+  scan_interval: 60 # every 15 min
+  force_update: true
+  resource_template: >
+    {% set address = states('input_text.airtag').split('Blau')[1].split('•')[0].strip() %}
+    {% if "Privat" in address %}
+      {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + home | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% else %}
+      {% set fix = address + ", Leipzig, Germany" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + fix | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% endif %}
+
+
+
+      
+- platform: rest
+  name: airtag_green_geo
+  value_template: "{{ value_json.results[0].formatted }}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - lon
+    - lat
+  verify_ssl: true
+  scan_interval: 60 # every 15 min
+  force_update: true
+  resource_template: >
+    {% set address = states('input_text.airtag').split('Green')[1].split('•')[0].strip() %}
+    {% if "Privat" in address %}
+      {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + home | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% else %}
+      {% set fix = address + ", Leipzig, Germany" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + fix | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% endif %}
+
+- platform: rest
+  name: airtag_card_geo
+  value_template: "{{ value_json.results[0].formatted }}"
+  json_attributes_path: "$.results[0]"
+  json_attributes:
+    - lon
+    - lat
+  verify_ssl: true
+  scan_interval: 60 # every 15 min
+  force_update: true
+  resource_template: >
+    {% set address = states('input_text.airtag').split('Card')[1].split('•')[0].strip() %}
+    {% if "Privat" in address %}
+      {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + home | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% else %}
+      {% set fix = address + ", Leipzig, Germany" %}
+      {{
+        "https://api.geoapify.com/v1/geocode/search?text="
+        + fix | urlencode
+        + "&apiKey=febf6f532f4849cf96b2ced67601586c&format=json"
+      }}
+    {% endif %}
