@@ -1,0 +1,27 @@
+name: Home Assistant CI
+
+# Run this on every push or pull request
+on:
+  workflow_dispatch:   # ⚡ allows manual triggering
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  home-assistant:
+    name: Home Assistant Configuration Check
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout your repo content
+      - name: ⤵️ Check out configuration from GitHub
+        uses: actions/checkout@v3
+
+      # 2) Run Frenck’s config check
+      - name: 🚀 Run Home Assistant Configuration Check
+        uses: frenck/action-home-assistant@v1
+        with:
+          path: "."         # Path to your HA config directory
+          secrets: "secrets.fake.yaml"  # Your fake secrets file
+          version: stable          # Home Assistant version to test against
