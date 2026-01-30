@@ -55,8 +55,8 @@ I’ve written a series of blog posts on my website that dive into particular pa
 [forks-shield]: https://img.shields.io/github/forks/MRi-LE/Home-Assistant-Config.svg
 [forks]: https://github.com/MRi-LE/Home-AssistantConfig/network/members
 [commit-activity-shield]: https://img.shields.io/github/commit-activity/y/MRi-LE/Home-Assistant-Config.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
-[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2025.12.3-blue.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
+[ha-version-shield]: https://img.shields.io/badge/Home%20Assistant-2026.1.3-blue.svg
 
 <!-- Repository links -->
 [commits]: https://github.com/MRi-LE/Home-Assistant-Config/commits/main
