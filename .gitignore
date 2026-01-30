@@ -142,7 +142,7 @@ www/community/advanced-camera-card/*
 
 # Allow documentation files only in root
 !*.md
-#/**/*.md 
+/**/*.md 
 
 
 # Addon configurations - Allow essential config files only
