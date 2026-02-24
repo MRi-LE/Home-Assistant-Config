@@ -112,65 +112,30 @@
   - service: velux.reboot_gateway
     data: {}
   mode: single
-
 - id: '1657822394319'
   alias: Wohnzimmer - Licht bei Bewegung
-  description: ''
+  description: Bewegung schaltet Stehlampe ein, nach 5 Min ohne Bewegung aus (23:00–06:00)
   triggers:
   - entity_id: binary_sensor.trisensor8_flur_motion_detection
-    id: Licht an
     to: 'on'
     trigger: state
-  - entity_id: binary_sensor.trisensor8_flur_motion_detection
-    id: Licht aus
-    to: 'off'
-    for:
-      hours: 0
-      minutes: 1
-      seconds: 0
-    trigger: state
   conditions:
-  - condition: state
-    entity_id: light.stehlampe
-    state:
-    - 'off'
   - condition: time
     after: '23:00:00'
     before: 06:00:00
   actions:
-  - choose:
-    - conditions:
-      - condition: trigger
-        id: Licht an
-      - condition: state
-        entity_id: light.stehlampe
-        state: 'off'
-      sequence:
-      - target:
-          entity_id: light.stehlampe
-        data: {}
-        action: light.turn_on
-      - action: switch.turn_on
-        metadata: {}
-        data: {}
-        target:
-          entity_id: switch.smart_switch_7
-    - conditions:
-      - condition: trigger
-        id: Licht aus
-      - condition: state
-        entity_id: binary_sensor.trisensor8_flur_motion_detection
-        state: 'off'
-      - condition: state
-        entity_id: light.stehlampe
-        state: 'on'
-      sequence:
-      - target:
-          entity_id: light.stehlampe
-        data: {}
-        action: light.turn_off
-    default: []
-  mode: single
+  - target:
+      entity_id: light.stehlampe
+    action: light.turn_on
+  - wait_for_trigger:
+    - entity_id: binary_sensor.trisensor8_flur_motion_detection
+      to: 'off'
+      for: 00:05:00
+      trigger: state
+  - target:
+      entity_id: light.stehlampe
+    action: light.turn_off
+  mode: restart
 - id: '1709550850830'
   alias: CZ500
   description: CZ500
