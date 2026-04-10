@@ -1,14 +1,14 @@
 - id: '1632477673388'
   alias: Alarm - Trigger when sensors go off
   description: ''
-  trigger:
-  - platform: state
+  triggers:
+  - trigger: state
     entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open_2
     to: 'on'
-  - platform: state
+  - trigger: state
     entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open
     to: 'on'
-  condition:
+  conditions:
   - condition: or
     conditions:
     - condition: state
@@ -17,8 +17,8 @@
     - condition: state
       entity_id: alarm_control_panel.hausalarm
       state: armed_away
-  action:
-  - service: alarm_control_panel.alarm_trigger
+  actions:
+  - action: alarm_control_panel.alarm_trigger
     target:
       entity_id: alarm_control_panel.hausalarm
   mode: single
@@ -28,13 +28,13 @@
   triggers:
   - entity_id: alarm_control_panel.hausalarm
     to: triggered
-    trigger: state
+    triggers: state
   conditions: []
   actions:
   - data: {}
     target:
       entity_id: switch.high_volume_siren_95_db_and_led_strobe_light
-    action: homeassistant.turn_on
+    actions: homeassistant.turn_on
   mode: single
 - id: '1632481381999'
   alias: Alarm - Disarmed
@@ -42,30 +42,30 @@
   triggers:
   - entity_id: alarm_control_panel.hausalarm
     to: disarmed
-    trigger: state
+    triggers: state
   conditions: []
   actions:
   - data: {}
     target:
       entity_id: switch.high_volume_siren_95_db_and_led_strobe_light
-    action: homeassistant.turn_off
+    actions: homeassistant.turn_off
   mode: single
 - id: '1638199786297'
   alias: Stehlampe Wohnzimmer
   description: ''
-  trigger:
-  - platform: time
+  triggers:
+  - trigger: time
     at: 06:00:00
     id: morgens_an
-  - platform: sun
+  - trigger: sun
     event: sunset
     offset: -00:20:00
     id: sonnenuntergang
-  - platform: time
+  - trigger: time
     at: '22:30:00'
     id: abends_aus
-  condition: []
-  action:
+  conditions: []
+  actions:
   - choose:
     - conditions:
       - condition: trigger
@@ -76,7 +76,7 @@
       - condition: sun
         before: sunrise
       sequence:
-      - service: light.turn_on
+      - action: light.turn_on
         target:
           entity_id: light.stehlampe
         data: {}
@@ -87,7 +87,7 @@
         entity_id: light.stehlampe
         state: 'on'
       sequence:
-      - service: light.turn_off
+      - action: light.turn_off
         target:
           entity_id: light.stehlampe
         data: {}
@@ -95,7 +95,7 @@
       - condition: trigger
         id: sonnenuntergang
       sequence:
-      - service: light.turn_on
+      - action: light.turn_on
         data: {}
         target:
           entity_id: light.stehlampe
@@ -106,7 +106,7 @@
   description: ''
   triggers:
   - event: shutdown
-    trigger: homeassistant
+    triggers: homeassistant
   conditions: []
   actions:
   - action: button.press
@@ -119,7 +119,7 @@
   triggers:
   - entity_id: binary_sensor.trisensor8_flur_motion_detection
     to: 'on'
-    trigger: state
+    triggers: state
   conditions:
   - condition: time
     after: '23:00:00'
@@ -127,31 +127,31 @@
   actions:
   - target:
       entity_id: light.stehlampe
-    action: light.turn_on
+    actions: light.turn_on
   - wait_for_trigger:
     - entity_id: binary_sensor.trisensor8_flur_motion_detection
       to: 'off'
       for: 00:05:00
-      trigger: state
+      triggers: state
   - target:
       entity_id: light.stehlampe
-    action: light.turn_off
+    actions: light.turn_off
   mode: restart
 - id: '1709550850830'
   alias: CZ500
   description: CZ500
-  trigger:
-  - platform: state
+  triggers:
+  - trigger: state
     entity_id: binary_sensor.i81hb_cell_motion_detection
     from: 'off'
     to: 'on'
-  action:
+  actions:
   - delay: 0
-  - service: camera.snapshot
+  - action: camera.snapshot
     entity_id: camera.i81hb_mainstream
     data:
       filename: /media/CZ500/last_motion.jpg
-  - service: camera.snapshot
+  - action: camera.snapshot
     entity_id: camera.i81hb_mainstream
     data:
       filename: /media/CZ500/archive/{{ now().strftime("%d.%m.%Y-%H:%M:%S") }}.jpg
@@ -159,20 +159,20 @@
 - id: '1719209158444'
   alias: SteckdoseBad
   description: ''
-  trigger:
-  - platform: state
+  triggers:
+  - trigger: state
     entity_id:
     - switch.steckdose_bad_2
     from: 'on'
     to: 'off'
-  - platform: state
+  - trigger: state
     entity_id:
     - switch.steckdose_bad_2
     from: 'off'
     to: 'on'
-  condition: []
-  action:
-  - service: light.turn_on
+  conditions: []
+  actions:
+  - action: light.turn_on
     metadata: {}
     data: {}
     target:
@@ -180,7 +180,7 @@
   - condition: state
     entity_id: switch.steckdose_bad_2
     state: 'off'
-  - service: light.turn_off
+  - action: light.turn_off
     metadata: {}
     data: {}
     target:
@@ -227,7 +227,7 @@
   - entity_id:
     - binary_sensor.rauchmelder
     to: 'on'
-    trigger: state
+    triggers: state
   conditions: []
   actions:
   - data:
@@ -240,5 +240,5 @@
         priority: 2
         retry: 60
         expire: 3600
-    action: notify.pushover
+    actions: notify.pushover
   mode: single
