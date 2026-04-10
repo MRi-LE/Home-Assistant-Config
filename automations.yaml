@@ -104,13 +104,14 @@
 - id: '1646759202317'
   alias: Velux KFL Reboot
   description: ''
-  trigger:
-  - platform: homeassistant
-    event: shutdown
-  condition: []
-  action:
-  - service: velux.reboot_gateway
-    data: {}
+  triggers:
+  - event: shutdown
+    trigger: homeassistant
+  conditions: []
+  actions:
+  - action: button.press
+    target:
+      entity_id: button.klf_200_gateway_neu_starten
   mode: single
 - id: '1657822394319'
   alias: Wohnzimmer - Licht bei Bewegung
