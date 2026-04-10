@@ -1,14 +1,14 @@
 - id: '1632477673388'
   alias: Alarm - Trigger when sensors go off
   description: ''
-  triggers:
-  - trigger: state
+  trigger:
+  - platform: state
     entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open_2
     to: 'on'
-  - trigger: state
+  - platform: state
     entity_id: binary_sensor.magnetic_contact_access_control_window_door_is_open
     to: 'on'
-  conditions:
+  condition:
   - condition: or
     conditions:
     - condition: state
@@ -17,8 +17,8 @@
     - condition: state
       entity_id: alarm_control_panel.hausalarm
       state: armed_away
-  actions:
-  - action: alarm_control_panel.alarm_trigger
+  action:
+  - service: alarm_control_panel.alarm_trigger
     target:
       entity_id: alarm_control_panel.hausalarm
   mode: single
@@ -53,19 +53,19 @@
 - id: '1638199786297'
   alias: Stehlampe Wohnzimmer
   description: ''
-  triggers:
-  - trigger: time
+  trigger:
+  - platform: time
     at: 06:00:00
     id: morgens_an
-  - trigger: sun
+  - platform: sun
     event: sunset
     offset: -00:20:00
     id: sonnenuntergang
-  - trigger: time
+  - platform: time
     at: '22:30:00'
     id: abends_aus
-  conditions: []
-  actions:
+  condition: []
+  action:
   - choose:
     - conditions:
       - condition: trigger
@@ -140,18 +140,18 @@
 - id: '1709550850830'
   alias: CZ500
   description: CZ500
-  triggers:
-  - trigger: state
+  trigger:
+  - platform: state
     entity_id: binary_sensor.i81hb_cell_motion_detection
     from: 'off'
     to: 'on'
-  actions:
+  action:
   - delay: 0
-  - action: camera.snapshot
+  - service: camera.snapshot
     entity_id: camera.i81hb_mainstream
     data:
       filename: /media/CZ500/last_motion.jpg
-  - action: camera.snapshot
+  - service: camera.snapshot
     entity_id: camera.i81hb_mainstream
     data:
       filename: /media/CZ500/archive/{{ now().strftime("%d.%m.%Y-%H:%M:%S") }}.jpg
@@ -159,20 +159,20 @@
 - id: '1719209158444'
   alias: SteckdoseBad
   description: ''
-  triggers:
-  - trigger: state
+  trigger:
+  - platform: state
     entity_id:
     - switch.steckdose_bad_2
     from: 'on'
     to: 'off'
-  - trigger: state
+  - platform: state
     entity_id:
     - switch.steckdose_bad_2
     from: 'off'
     to: 'on'
-  conditions: []
-  actions:
-  - action: light.turn_on
+  condition: []
+  action:
+  - service: light.turn_on
     metadata: {}
     data: {}
     target:
@@ -180,7 +180,7 @@
   - condition: state
     entity_id: switch.steckdose_bad_2
     state: 'off'
-  - action: light.turn_off
+  - service: light.turn_off
     metadata: {}
     data: {}
     target:
