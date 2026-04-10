@@ -196,7 +196,6 @@
       
       
       
-    - sensor:
       - name: airtag_rosa_address
         icon: mdi:map-marker
         state: >
