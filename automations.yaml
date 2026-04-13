@@ -137,25 +137,6 @@
       entity_id: light.stehlampe
     action: light.turn_off
   mode: restart
-- id: '1709550850830'
-  alias: CZ500
-  description: CZ500
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.i81hb_cell_motion_detection
-    from: 'off'
-    to: 'on'
-  action:
-  - delay: 0
-  - service: camera.snapshot
-    entity_id: camera.i81hb_mainstream
-    data:
-      filename: /media/CZ500/last_motion.jpg
-  - service: camera.snapshot
-    entity_id: camera.i81hb_mainstream
-    data:
-      filename: /media/CZ500/archive/{{ now().strftime("%d.%m.%Y-%H:%M:%S") }}.jpg
-  mode: single
 - id: '1719209158444'
   alias: SteckdoseBad
   description: ''
