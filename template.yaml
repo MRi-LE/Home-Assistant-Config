@@ -196,10 +196,9 @@
       
       
       
-    - sensor:
-      - name: airtag_rosa_address
-        icon: mdi:map-marker
-        state: >
+    - name: airtag_rosa_address
+      icon: mdi:map-marker
+      state: >
           {% set text1 = states('input_text.airtag') %}
           {% set text2 = states('input_text.airtag_2') %}
           {% set home = "Gottfried-Rentzsch-Weg 1c 04316 Leipzig" %}
